@@ -1,0 +1,54 @@
+---
+title: "Description of Functions to Analyze FARS Data"
+author: "Paramjot Singh"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+This package contains a set of functions to analyze *fars* data. This vignette will discuss the use of each of the avialble function. 
+
+## Create filenames from year input
+
+In order to create a filename in the correct format, `make_filename` function can be used:
+
+```{r}
+file_2013 <- make_filename(2013)
+```
+
+## Reading the file 
+
+The filename created above can be read using `fars__read` function:
+
+```{r}
+fars_read(file_2013)
+```
+
+## Data summary
+
+Summary of fatalities as a function of month and year can be seen using `fars_summarize_years` function:
+
+```{r}
+fars_summarize_years(2014)
+```
+
+## Map of fatalities
+
+Fatalities for a given state and year can be seen on a map using `fars_map_state` function:
+
+```{r}
+fars_map_state(15, 2015)
+```
+
+
+
+
