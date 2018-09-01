@@ -1,0 +1,11 @@
+Package: fars
+Title: Data Manipulation Functions for FARS Data
+Version: 0.1
+Authors@R: person("Paramjot", "Singh", email = "param.chhina@gmail.com", role = c("aut", "cre"))
+Description: This package provides functions for data manipulation of FARS data. It has functions to create filenames for different years, subset and store requested data in lists, manipulate the data to provide number of fatalities for each month and year. The package also has functions to create maps of these fatalities.
+Depends: R (>= 3.4.3)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
