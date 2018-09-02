@@ -1,6 +1,6 @@
 #' Reads data from a file
 #'
-#' This function first checks if the file exists. If it does, it reads the data and converts it into a tibble. If the file does not exist, it will throw an error.
+#' This function first checks if the file exists. If it does, it reads the data and converts it into a tibble. If the file does not exist, it will throw an error. Note that this filename can be conveniently created using \code{make_filename} function included in this package.
 #'
 #' @param filename Name of the file(character string) from which to read the data.
 #'
@@ -58,9 +58,10 @@ make_filename <- function(year) {
 fars_read_years <- function(years) {
         lapply(years, function(year) {
                 file <- make_filename(year)
+                file <- paste0(system.file("extdata", package = "fars"), "/",file)
                 tryCatch({
                         dat <- fars_read(file)
-                        dplyr::mutate(dat, year = year) %>% 
+                        dplyr::mutate(dat, year = YEAR) %>% 
                                 dplyr::select(MONTH, year)
                 }, error = function(e) {
                         warning("invalid year: ", year)
@@ -103,7 +104,7 @@ fars_summarize_years <- function(years) {
 #'
 #' @importFrom readr read_csv
 #' @importFrom dplyr filter 
-#' @importFrom graphis points 
+#' @importFrom graphics points 
 #' @importFrom maps map
 #'
 #' @examples
@@ -112,6 +113,7 @@ fars_summarize_years <- function(years) {
 #' @export
 fars_map_state <- function(state.num, year) {
         filename <- make_filename(year)
+        filename <- paste0(system.file("extdata", package = "fars"), "/",filename)
         data <- fars_read(filename)
         state.num <- as.integer(state.num)
 

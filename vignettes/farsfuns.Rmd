@@ -22,7 +22,10 @@ This package contains a set of functions to analyze *fars* data. This vignette w
 In order to create a filename in the correct format, `make_filename` function can be used:
 
 ```{r}
+library(fars)
+library(magrittr)
 file_2013 <- make_filename(2013)
+file_2013 <- paste0(system.file("extdata", package = "fars"), "/",file_2013)
 ```
 
 ## Reading the file 
@@ -38,7 +41,7 @@ fars_read(file_2013)
 Summary of fatalities as a function of month and year can be seen using `fars_summarize_years` function:
 
 ```{r}
-fars_summarize_years(2014)
+fars_summarize_years(2013)
 ```
 
 ## Map of fatalities
@@ -46,7 +49,7 @@ fars_summarize_years(2014)
 Fatalities for a given state and year can be seen on a map using `fars_map_state` function:
 
 ```{r}
-fars_map_state(15, 2015)
+fars_map_state(1, 2013)
 ```
 
 

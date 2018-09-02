@@ -13,7 +13,7 @@ fars_read(filename)
 This function returns a tibble contianing the data.
 }
 \description{
-This function first checks if the file exists. If it does, it reads the data and converts it into a tibble. If the file does not exist, it will throw an error.
+This function first checks if the file exists. If it does, it reads the data and converts it into a tibble. If the file does not exist, it will throw an error. Note that this filename can be conveniently created using \code{make_filename} function included in this package.
 }
 \examples{
 fars_read("filename")
