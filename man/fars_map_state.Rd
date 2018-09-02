@@ -18,6 +18,6 @@ This function returns a map of fatalities for a given state and year
 This function uses state number and year as input and if fatality data exists, it puts this data on a map
 }
 \examples{
-fars_map_state(15, 2015)
+fars_map_state(1, 2015)
 
 }

@@ -16,6 +16,6 @@ This function returns a list containing month and year from each years data
 This function reads in a vector of years. For each year, it makes a filename, reads the data from that file, adds a year column to the data, selects, month and year variables, and finally stores that into an element of list.
 }
 \examples{
-fars_read_years(c(2001:2007))
+fars_read_years(2012)
 
 }

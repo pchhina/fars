@@ -16,6 +16,7 @@ This function returns a table of number of observations for each month and year
 This function uses the list created by \code{fars_read_years}, calculates the number of observations for each month and year pair and generates a tabular output of this data.
 }
 \examples{
-fars_summarize_years(c(2010:2013))
+library(magrittr)
+fars_summarize_years(2013)
 
 }

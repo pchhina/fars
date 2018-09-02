@@ -16,6 +16,8 @@ This function returns a tibble contianing the data.
 This function first checks if the file exists. If it does, it reads the data and converts it into a tibble. If the file does not exist, it will throw an error. Note that this filename can be conveniently created using \code{make_filename} function included in this package.
 }
 \examples{
-fars_read("filename")
+file_2013 <- make_filename(2013)
+file_2013 <- paste0(system.file("extdata", package = "fars"), "/",file_2013)
+fars_read(file_2013)
 
 }

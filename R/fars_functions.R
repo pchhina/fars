@@ -10,7 +10,9 @@
 #' @importFrom dplyr tbl_df 
 #'
 #' @examples
-#' fars_read("filename")
+#' file_2013 <- make_filename(2013)
+#' file_2013 <- paste0(system.file("extdata", package = "fars"), "/",file_2013)
+#' fars_read(file_2013)
 #' 
 #' @export
 
@@ -50,9 +52,10 @@ make_filename <- function(year) {
 #'
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select 
+#' @importFrom magrittr %>%
 #'
 #' @examples
-#' fars_read_years(c(2001:2007))
+#' fars_read_years(2012)
 #' 
 #' @export
 fars_read_years <- function(years) {
@@ -80,9 +83,11 @@ fars_read_years <- function(years) {
 #'
 #' @importFrom readr read_csv
 #' @importFrom dplyr tbl_df 
+#' @importFrom magrittr %>%
 #'
 #' @examples
-#' fars_summarize_years(c(2010:2013))
+#' library(magrittr)
+#' fars_summarize_years(2013)
 #' 
 #' @export
 fars_summarize_years <- function(years) {
@@ -106,9 +111,10 @@ fars_summarize_years <- function(years) {
 #' @importFrom dplyr filter 
 #' @importFrom graphics points 
 #' @importFrom maps map
+#' @importFrom magrittr %>%
 #'
 #' @examples
-#' fars_map_state(15, 2015)
+#' fars_map_state(1, 2015)
 #' 
 #' @export
 fars_map_state <- function(state.num, year) {
